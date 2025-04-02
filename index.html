@@ -39,24 +39,59 @@
       </hgroup>
     </header>
     <main>
+      <p>
+        This is a demo of the
+        <a
+          href="https://github.com/tims-little-js-snippets/ensureValidInputValue"
+          title="Link to the project."
+          >Ensure Valid Input Value</a
+        >
+        script from
+        <a
+          href="https://github.com/tims-little-js-snippets"
+          title="Link to the organization."
+          >Tim's Little JS Snippets</a
+        >. For more information, come visit the project's
+        <a
+          href="https://github.com/tims-little-js-snippets/ensureValidInputValue/blob/main/README.md"
+          title="Link to the READEM"
+          >README.md</a
+        >.
+      </p>
       <label>
         Alphanumeric
         <input name="alphanumeric" />
+        <small
+          >ensureValidInputValue('input[name="alphanumeric"]',
+          /^[A-Za-z0-9]*$/);</small
+        >
       </label>
 
       <label>
         Email
         <input name="email" />
+        <small>
+          ensureValidInputValue('input[name="email"]',
+          /^[A-Za-z0-9_.+]+@[A-Za-z0-9_]+\.[A-Za-z0-9_.]+$/);</small
+        >
       </label>
 
       <label>
         Phone Number
         <input name="phone" />
+        <small
+          >ensureValidInputValue('input[name="phone"]',
+          /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/);</small
+        >
       </label>
 
       <label>
         Zip Code
         <input name="zip" />
+        <small
+          >ensureValidInputValue('input[name="zip"]',
+          /^[0-9]{5}(-[0-9]{4})*$/);</small
+        >
       </label>
     </main>
   </body>
