@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ensure Valid Input Value Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+    />
+    <script src="/ensureValidInputValue.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        // Alphanumeric
+        ensureValidInputValue('input[name="alphanumeric"]', /^[A-Za-z0-9]*$/);
+
+        // Email
+        ensureValidInputValue(
+          'input[name="email"]',
+          /^[A-Za-z0-9_.+]+@[A-Za-z0-9_]+\.[A-Za-z0-9_.]+$/
+        );
+
+        // Phone Number
+        ensureValidInputValue(
+          'input[name="phone"]',
+          /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/
+        );
+
+        // ZIP Code
+        ensureValidInputValue('input[name="zip"]', /^[0-9]{5}(-[0-9]{4})*$/);
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>Ensure Valid Input Value</h1>
+        <p>Demo</p>
+      </hgroup>
+    </header>
+    <main>
+      <label>
+        Alphanumeric
+        <input name="alphanumeric" />
+      </label>
+
+      <label>
+        Email
+        <input name="email" />
+      </label>
+
+      <label>
+        Phone Number
+        <input name="phone" />
+      </label>
+
+      <label>
+        Zip Code
+        <input name="zip" />
+      </label>
+    </main>
+  </body>
+</html>
