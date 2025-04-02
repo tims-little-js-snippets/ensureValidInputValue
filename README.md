@@ -2,6 +2,10 @@
 
 This function ensures the target input(s) retain a value that matches a given RegEx expression.
 
+## Demo
+
+Check out the demo at [timinc.us](https://tljs-ensurevalidinputvalue.timinc.us/).
+
 ## Usage
 
 In order to register a target/series of targets, call the function `ensureValidInputValue` with the following parameters:
