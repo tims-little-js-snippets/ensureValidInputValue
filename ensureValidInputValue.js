@@ -10,15 +10,14 @@ const ensureValidInputValue = (() => {
       throw new Error(`Invalid selector value. Must be string. (${selector})`);
     if (!(matcher instanceof RegExp))
       throw new Error(`Invalid matcher value. Must be RegEx. (${matcher})`);
-    if (!(parent instanceof Element))
-      throw new Error(`Invalid parent value. Must be Element. (${parent})`);
+    if (!(parent instanceof Element) && !(parent instanceof Document))
+      throw new Error(
+        `Invalid parent value. Must be Element or Document. (${parent})`
+      );
     if (typeof validationMessage !== "string")
       throw new Error(
         `Invalid validationMessage value. Must be string. (${validationMessage})`
       );
-
-    const inputs = parent.querySelectorAll(selector);
-    const cleanups = inputs.map(registerInput);
 
     const registerInput = (element) => {
       if (!(element instanceof HTMLInputElement))
@@ -77,6 +76,9 @@ const ensureValidInputValue = (() => {
         },
       };
     };
+
+    const inputs = [...parent.querySelectorAll(selector)];
+    const cleanups = inputs.map(registerInput);
 
     return {
       remove: () => {
