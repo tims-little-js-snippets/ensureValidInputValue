@@ -21,7 +21,9 @@ const ensureValidInputValue = (() => {
 
     const registerInput = (element) => {
       if (!(element instanceof HTMLInputElement))
-        throw new Error(`Invalid target. Must be input. (${element})`);
+        throw new Error(
+          `Invalid target. Must be an input element. (${element})`
+        );
       if (cache.has(element))
         throw new Error(`Invalid target. Already cached. (${element})`);
 
