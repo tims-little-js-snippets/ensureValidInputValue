@@ -24,6 +24,14 @@ const ensureValidInputValue = (() => {
       });
       element.addEventListener("input", inputHandler);
     });
+
+    return {
+      remove: () => {
+        inputs.forEach((element) => {
+          element.removeEventListener("input", inputHandler);
+        });
+      },
+    };
   }
 
   return track;
